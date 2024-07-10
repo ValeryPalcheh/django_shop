@@ -16,13 +16,13 @@ class Reference_book(models.Model):
         return f"{self.name} # {self.pk}"
     
 
-class Book(models.Model):
+class Author(models.Model):
         # pk # name # reference book #
     name = models.CharField(max_length=100)
     reference_book = models.ForeignKey(
         Reference_book,
         on_delete=models.PROTECT,
-        related_name="books"
+        related_name="authors"
     )
     description = models.TextField(
         blank=True,
@@ -30,4 +30,4 @@ class Book(models.Model):
     )
 
     def __str__(self):
-        return f"book # {self.pk}"
+        return f"author # {self.pk}"
