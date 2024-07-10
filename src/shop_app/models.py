@@ -44,4 +44,18 @@ class Genre(models.Model):
     )
     def __str__(self):
         return f"{self.name} # {self.pk}"
-    
+
+class Publishing_house(models.Model):
+        # pk # name # reference book #
+    name = models.CharField(max_length=100)
+    reference_book = models.ForeignKey(
+        Reference_book,
+        on_delete=models.PROTECT,
+        related_name="publ_house"
+    )
+    description = models.TextField(
+        blank=True,
+        null=True
+    )
+    def __str__(self):
+        return f"{self.name} # {self.pk}"    
