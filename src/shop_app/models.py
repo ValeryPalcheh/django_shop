@@ -17,8 +17,8 @@ class Reference_book(models.Model):
     
 
 class Book(models.Model):
-        # pk # number # reference book #
-    number = models.CharField(max_length=100)
+        # pk # name # reference book #
+    name = models.CharField(max_length=100)
     reference_book = models.ForeignKey(
         Reference_book,
         on_delete=models.PROTECT,
