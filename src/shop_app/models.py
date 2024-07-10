@@ -30,4 +30,4 @@ class Author(models.Model):
     )
 
     def __str__(self):
-        return f"author # {self.pk}"
+        return f"{self.name} # {self.pk}"
